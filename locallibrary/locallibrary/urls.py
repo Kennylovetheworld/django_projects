@@ -20,7 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-# Use include() to add paths from the catalog application
+#Use include() to add paths from the catalog application
 from django.urls import include
 from django.urls import path
 urlpatterns += [
@@ -33,3 +33,7 @@ urlpatterns += [
     path('', RedirectView.as_view(url='/catalog/')),
 ]
 # Do not add ", permanent=True" to the above line (different than the MDN tutorial)
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
