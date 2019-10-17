@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>DJ4E Projects</title>
+  <meta name="wa4e" content="e5f6ad6ce374177eef023bf5d0c018b6">
+  <meta charset="UTF-8">
+  <meta name="description" content="SI664 hello world">
+  <meta name="keywords" content="django2 project">
+  <meta name="author" content="Shukai Fan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<header><title>This is title</title></header>
+<body>
+    <br> Hello World ...
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="/autos">Autos CRUD</a>
+        <ul>
+        <p> This is a cat
+            <br> <img src="image/bigcat.jpg"  alt="a big cat" />
+        </p>
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout'%}?next={{request.path}}">logout</a></li>
+   	{% else %}
+		 <li><a href="{% url 'login'%}?next={{request.path}}">Please login</a></li>
+   	{% endif %}
+</body>
+</html>
+
